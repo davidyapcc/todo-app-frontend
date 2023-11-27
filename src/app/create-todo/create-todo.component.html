@@ -1,0 +1,17 @@
+<div class="create-form-container">
+  <form #todoForm="ngForm" (ngSubmit)="onSubmit(todoForm)">
+    <mat-form-field>
+      <input matInput placeholder="Name" name="name" maxlength="20" ngModel required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Description" name="description" maxlength="100" ngModel required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Status</mat-label>
+      <mat-select name="status" ngModel required>
+        <mat-option *ngFor="let status of statusOptions" [value]="status">{{ status }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </form>
+</div>

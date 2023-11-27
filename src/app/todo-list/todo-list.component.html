@@ -1,0 +1,14 @@
+<div class="todo-card-container">
+  <mat-card *ngFor="let todo of todos" class="todo-card" (click)="openTodoDetailsDialog(todo)">
+    <mat-card-header>
+      <mat-card-title>{{ todo.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Description: {{ todo.description }}</p>
+      <p>Created Date: {{ todo.createdAt }}</p>
+      <p>Status: {{ todo.status }}</p>
+      <!-- Add other properties as needed -->
+    </mat-card-content>
+    <!-- Additional actions or buttons can be added in the card footer -->
+  </mat-card>
+</div>

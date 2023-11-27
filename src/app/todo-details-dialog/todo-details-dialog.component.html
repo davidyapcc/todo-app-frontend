@@ -1,0 +1,23 @@
+<h2>Edit ToDo</h2>
+
+<form [formGroup]="updateForm">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" placeholder="Name">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <input matInput formControlName="description" placeholder="Description">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Status</mat-label>
+    <mat-select formControlName="status">
+      <mat-option *ngFor="let status of statusOptions" [value]="status">{{ status }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <button mat-raised-button color="primary" (click)="updateTodo()">Update</button>
+  <button mat-raised-button class="button-danger" (click)="deleteTodo()" style="margin-left: 20px">Delete</button>
+</form>
